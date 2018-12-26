@@ -1,0 +1,15 @@
+<h1>Aufgabe bearbeiten</h1>
+
+<%= simple_form_for @project do |f| %>
+ <%= f.input :title, label: "Projekttitel" %>
+   <%= f.input :description, label: "Beschreibung" %>
+  <%= f.input :noInt, label: "Interne Auftragsnummer" %>
+  <%= f.input :noExt, label: "Externe Auftragsnummer" %>
+  <%= f.input :workTodo, label: "Zu erledigende Arbeiten" %>
+  <%= f.button :submit, label: "Erstellen" %>
+<% end %>
+
+
+	<%= link_to "Editieren" %>
+	<%= link_to "löschen" %>
+	<%= link_to "Zurueck" , root_path%>

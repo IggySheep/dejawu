@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MeineAufgabe</title>
+
+  </head>
+
+  <body>
+  <h1>DeJaWu - Zeitmanagement für den Werkzeugbau</h1>
+<p> 
+<button type="button" class="btn btn-default"> <%= link_to "Neue Aufgabe", new_project_path%> </button>
+
+<button type="button" class="btn btn-default"> <%= link_to "Übersicht", new_project_path%> </button>
+
+
+<% @projects.each do |project| %>
+ <h2> <%= link_to project.title, project %> </h2>
+ <p> <%= project.description %></p>
+  <p> <%= project.noInt %></p>
+   <p> <%= project.noExt %></p>
+    <p> <%= project.workTodo %></p>
+
+ <% end %> 
+
+
+</body>
+</html>
