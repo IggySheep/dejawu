@@ -1,7 +1,15 @@
 Rails.application.routes.draw do
-	resources :projects
+
 
 root 'projects#index'
+
+  	resources :projects do
+		member do
+			patch :complete
+end
+end
+
+
 	#get 'projects/quark'
 
 end

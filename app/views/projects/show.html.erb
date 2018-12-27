@@ -15,6 +15,14 @@
    <h3>Zu erledigende Arbeiten </h3>
     <p> <%= @project.workTodo %></p>
 
-	<%= link_to "Editieren", edit_project_path %>
-	<%= link_to "löschen", project_path(@project) , method: :delete, data: { confirm: "Bist Du sicher?"} %>
-	<%= link_to "Zurueck" , root_path%>
+	<%= link_to edit_project_path do%>
+	<i class="far fa-edit"></i>
+	<% end %>
+
+	<%= link_to project_path(@project) , method: :delete, data: { confirm: "Bist Du sicher?"} do %>
+	<i class="far fa-trash-alt"></i>
+   <% end %>
+   
+	<%= link_to root_path do%>
+	<i class="far fa-hand-point-left"></i>
+	<% end %>

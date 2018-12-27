@@ -14,14 +14,43 @@
 
 
 <% @projects.each do |project| %>
- <h2> <%= link_to project.title, project %> </h2>
- <p> <%= project.description %></p>
-  <p> <%= project.noInt %></p>
-   <p> <%= project.noExt %></p>
-    <p> <%= project.workTodo %></p>
+<div class="row item">
+	<% if project.completed? %>
 
- <% end %> 
 
+	<div class="col-md-6">
+ 	<h2>   <s> <%= link_to project.title, project %> </s>   </h2>
+	 <p>    <%= project.description  %>              </p>
+ 	 <p>    <%= project.noInt %>                     </p>
+ 	 <p>    <%= project.noExt %>                     </p>
+     <p>    <%= project.workTodo %>                  </p>
+     <p>   Bearbeitungszeit <%= project.completed_at %>               </p>
+    </div>
+    <div class="col-md-2">
+  
+   </div>
+
+<% else %>
+<div class="col-md-6">
+ 	<h2> <%= link_to project.title, project %> </h2>
+	 <p> <%= project.description %></p>
+ 	 <p> <%= project.noInt %></p>
+ 	  <p> <%= project.noExt %></p>
+    	<p> <%= project.workTodo %></p>
+    	<p> <%= project.completed_at %> </p>
+</div>
+    <div class="col-md-2">
+    	<%= link_to complete_project_path(project), method: :patch do%>
+    <h3><i class="fas fa-play"></i></h3>
+    <% end %>
+</div>
+  <% end %>
+ 
+
+
+</div>
+
+ <% end %>  
 
 </body>
 </html>

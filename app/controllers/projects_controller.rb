@@ -1,8 +1,8 @@
 class ProjectsController < ApplicationController
-	before_action :find_project, only: [:show, :edit, :update, :destroy]
+	before_action :find_project, only: [:show, :edit, :update, :destroy, :complete]
 	
 	def index
-		@projects= Project.all.order("created at DESC")
+		@projects= Project.all.order("created_at DESC")
 	end
 
 	def new
@@ -32,6 +32,8 @@ end
 		
 	end
 
+
+
 	def update
 	
 		if @project.update(project_params)
@@ -45,6 +47,12 @@ end
 		@project.destroy
 		redirect_to root_path
      end
+
+
+	def complete
+		@project.update_attribute(:completed_at, Time.now)
+		redirect_to root_path
+	end
 
 private
 def project_params
