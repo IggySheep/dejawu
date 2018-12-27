@@ -1,20 +1,6 @@
 
-
-
-<h1><%= @project.title %></h1>
-
-<h3>Beschreibung: </h3>
-<p><%= @project.description %></p>
-
-<h3>Interne Projektnummer: </h3>
-  <p> <%= @project.noInt %></p>
-
-  <h3>Externe Projektnummer: </h3>
-   <p> <%= @project.noExt %></p>
-
-   <h3>Zu erledigende Arbeiten </h3>
-    <p> <%= @project.workTodo %></p>
-
+	<h1><%= @project.title %></h1>
+	
 	<%= link_to edit_project_path do%>
 	<i class="far fa-edit"></i>
 	<% end %>
@@ -26,3 +12,147 @@
 	<%= link_to root_path do%>
 	<i class="far fa-hand-point-left"></i>
 	<% end %>
+
+<div class="row item">
+	<div class="col-md-2">
+<strong>Beschreibung: </strong>
+</div>
+
+ <div class="col-md-2">
+ 	<%= @project.description %>
+ </div>
+
+
+ <hr/>
+
+<div class="row item">
+	<div class="col-md-2">
+<strong>Interne Projektnummer:</strong> 
+<strong>Externe Projektnummer:</strong>
+<strong>Ansprechpartner:</strong>
+</div>
+
+
+ <div class="col-md-2">
+ <div><%= @project.noInt %></div>
+ <div><%= @project.noExt %></div>
+ <div>  <%= @project.noExt %></div>
+ </div>
+
+
+
+
+<div class="row item">
+	<div class="col-md-2">
+<strong>Wareneingang:</strong>
+<strong>Liefertermin:</strong>
+<strong>Ansprechpartner:</strong>
+</div>
+
+ 
+ <div class="col-md-2">
+ <div><%= @project.noInt %></div>
+ <div><%= @project.noExt %></div>
+ <div>  <%= @project.noExt %></div>
+ </div>
+</div>
+
+
+ <hr/>
+  
+ 
+
+
+   <h3>Zu erledigende Arbeiten </h3>
+   	<%= link_to edit_project_path do%>
+	<i class="far fa-edit"></i>
+	<% end %>
+
+	<%= link_to project_path(@project) , method: :delete, data: { confirm: "Bist Du sicher?"} do %>
+	<i class="far fa-trash-alt"></i>
+   <% end %>
+   
+	<%= link_to root_path do%>
+	<i class="far fa-hand-point-left"></i>
+	<% end %>
+
+
+<div class="row item">
+	<div class="col-md-2">
+<strong>Bearbeitungsschritt</strong> 
+<strong>Bearbeitungsschritt 1:</strong> 
+
+<strong>Bearbeitungsschritt 2:</strong>
+<strong>Bearbeitungsschritt 3:</strong>
+<strong>Bearbeitungsschritt 4:</strong>
+<strong>Bearbeitungsschritt 5:</strong>
+</div>
+
+
+ <div class="col-md-2">
+ 	 <div>Beschreibung</div>
+ <div><%= @project.workTodo %> </div>
+ <div><%= @project.workTodo1 %></div>
+ <div>  <%=  @project.workTodo2 %></div>
+  <div>  <%=  @project.workTodo3 %></div>
+  <div>  <%=  @project.workTodo4 %></div>
+ </div>
+     
+ <div class="col-md-2">
+ 	 <div>Start</div>
+ <div><i class="fas fa-play"></i></div>
+
+  <div><i class="fas fa-play"></i></div>
+ <div><i class="fas fa-play"></i></div>
+  <div><i class="fas fa-play"></i></div>
+   <div><i class="fas fa-play"></i></div>
+</div>
+
+
+ <div class="col-md-2">
+ 	 <div>Stop</div>
+ <div><i class="fas fa-stop-circle"></i></div>
+
+  <div><i class="fas fa-stop-circle"></i></div>
+ <div><i class="fas fa-stop-circle"></i></div>
+  <div><i class="fas fa-stop-circle"></i></div>
+   <div><i class="fas fa-stop-circle"></i></div>
+</div>
+
+   </div>                                 
+    
+<hr/>
+       <h3>Zukaufteile </h3>
+   	<%= link_to edit_project_path do%>
+	<i class="far fa-edit"></i>
+	<% end %>
+
+	<%= link_to project_path(@project) , method: :delete, data: { confirm: "Bist Du sicher?"} do %>
+	<i class="far fa-trash-alt"></i>
+   <% end %>
+   
+	<%= link_to root_path do%>
+	<i class="far fa-hand-point-left"></i>
+	<% end %>
+
+    <p> <%= @project.workTodo %></p>
+
+
+       <h3>externe Bearbeitung</h3>
+   	<%= link_to edit_project_path do%>
+	<i class="far fa-edit"></i>
+	<% end %>
+
+	<%= link_to project_path(@project) , method: :delete, data: { confirm: "Bist Du sicher?"} do %>
+	<i class="far fa-trash-alt"></i>
+   <% end %>
+   
+	<%= link_to root_path do%>
+	<i class="far fa-hand-point-left"></i>
+	<% end %>
+
+    <p> <%= @project.workTodo %></p>
+
+    <h3>Befundbericht</h3>
+    <div>Ein Mordsscheiss das Ganze</div>
+

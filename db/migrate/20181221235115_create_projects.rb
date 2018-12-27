@@ -6,6 +6,7 @@ class CreateProjects < ActiveRecord::Migration[5.2]
       t.string :noInt
       t.string :noExt
       t.text :workTodo
+   
 
       t.timestamps
     end

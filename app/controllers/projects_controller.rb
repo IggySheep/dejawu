@@ -56,7 +56,7 @@ end
 
 private
 def project_params
-	params.require(:project).permit(:title, :description, :noInt, :noExt, :workTodo)
+	params.require(:project).permit(:title, :description, :noInt, :noExt, :workTodo, :workTodo1, :workTodo2, :workTodo3, :workTodo4)
 end
 
 def find_project
