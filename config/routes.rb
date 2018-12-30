@@ -5,7 +5,7 @@ root 'projects#index'
 
   	resources :projects do
 		member do
-			patch :complete
+			patch :complete, :started, :stopped
 end
 end
 

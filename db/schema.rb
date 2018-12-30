@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_27_111801) do
+ActiveRecord::Schema.define(version: 2018_12_30_204226) do
 
   create_table "projects", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
@@ -21,10 +21,24 @@ ActiveRecord::Schema.define(version: 2018_12_27_111801) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.datetime "completed_at"
-    t.string "workTodo1"
-    t.string "workTodo2"
-    t.string "workTodo3"
-    t.string "workTodo4"
+    t.text "workTodo1"
+    t.text "workTodo2"
+    t.text "workTodo3"
+    t.text "workTodo4"
+    t.datetime "w0_started_at"
+    t.datetime "w0_stopped_at"
+    t.string "work"
+    t.string "work1"
+    t.string "work2"
+    t.string "work3"
+    t.string "work4"
+    t.string "bearbeiter"
+    t.datetime "liefTermn"
+    t.datetime "warEing"
+    t.string "ext"
+    t.string "ext1"
+    t.string "ext2"
+    t.string "ext3"
   end
 
 end
