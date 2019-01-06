@@ -7,12 +7,16 @@ class ProjectsController < ApplicationController
 
 	def new
 		@project = Project.new
+
 	end
 
 
 
 def create
 	@project=Project.new(project_params)
+    
+		@project.update_attribute(:w0_started_at, Time.now)
+		@project.update_attribute(:w0_stopped_at, Time.now)
 	if @project.save
 		redirect_to root_path
     else
@@ -55,6 +59,8 @@ end
 	end
 
 	def started
+		
+
 		@project.update_attribute(:w0_started_at, Time.now)
 		redirect_to project_path
       
@@ -68,9 +74,12 @@ end
 
 
 
+
+
 private
 def project_params
-	params.require(:project).permit(:title, :description, :noInt, :noExt, :workTodo, :workTodo1, :workTodo2, :workTodo3, :workTodo4, :work, :work1,:work2,:work3,:work4,:bearbeiter,:liefTermn,:warEing,:ext, :ext1, :ext2, :ext3)
+
+	params.require(:project).permit(:title, :description, :noInt, :noExt, :workTodo,:workTodo1, :workTodo2, :workTodo3, :workTodo4, :work, :work1,:work2,:work3,:work4,:bearbeiter,:liefTermn,:warEing,:ext, :ext1, :ext2, :ext3)
 end
 
 def find_project
