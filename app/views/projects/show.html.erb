@@ -1,5 +1,22 @@
 
-<h1><%= @project.title %></h1>
+<div class="row">
+	<div class="col-md-8">
+<div><strong><h1><%= @project.title %></h1></strong> </div>
+
+
+
+</div>
+	<div class="col-md-4">
+
+
+<div><strong><h2><%= @project.title %></h2></strong></div>
+
+</div>
+</div>
+
+
+
+
 
 	<button type="button" class="btn btn-default"> <%= link_to "Zurück", root_path %>
 	</button>
@@ -23,21 +40,23 @@
 
 <div class="row">
 
-	<div class="col-md-8">
+	<div class="col-md-10">
 
 
 
 <table>
    <tr> 
-   	<th>Beschreibung:</th>
-   	 <th>          </th>
-    <th>Heute ist der:</th>
+   	<th width=70% >Beschreibung:</th>
+   	 <th width=12%>Wareneingang</th>
+    <th width=12%>Heute ist der</th>
+    <th>Liefertermin</th>
  
   </tr>
   <tr>
     <td><%= @project.description %></td>
-    <td>          </td>
+    <td> <%= @project.warEing.strftime("%e.%b %Y  %H:%M:%S")  %> </td>
     <td><%= Time.now.strftime("%e.%b %Y  %H:%M:%S")  %></td>
+    <td><%= @project.liefTermn.strftime("%e.%b %Y  %H:%M") %></td>
  
    </tr>
 
@@ -54,9 +73,8 @@
 <div><strong>Interne Projektnummer:</strong> </div>
 <div><strong>Externe Projektnummer:</strong></div>
 <div><strong>Ansprechpartner:</strong></div>
-<div><strong>Wareneingang:</strong></div>
-<div><strong>Liefertermin:</strong></div>
-<div><strong>Ansprechpartner:</strong></div>
+
+
 </div>
 
 
@@ -64,9 +82,7 @@
  <div><%= @project.noInt %></div>
  <div><%= @project.noExt %></div>
  <div>  <%= @project.noExt %></div>
- <div><%= @project.warEing.strftime("%e.%b %Y  %H:%M:%S")  %></div> 
- <div><%= @project.liefTermn.strftime("%e.%b %Y") %></div>
- <div>  <%= @project.noExt %></div>
+
  </div>
 
 
@@ -79,16 +95,18 @@
  <% hh, mm=mm.divmod(60) %>
  <% dd, hh=hh.divmod(24) %>
 
- <div class="col-md-4">
+ <div class="col-md-7">
 
 <% if (@project.liefTermn-Time.now)<=0 %>
     
 
-     <div><h2><span style="color:#FF0000"> Noch <%= dd%> Tage <%= hh %> Stunden  <%= mm %> Minuten und <%= ss %> Sekunden  </h2></span></div>
-        <div><h2><span style="color:#FF0000"> Liefertermin überschritten!</h2></span></div>
+     <div><h2><span style="color:#FF0000"> <b>Der Liefeertermin wurde um</br><%= dd%> Tage <%= hh %> Stunden  <%= mm %> Minuten </br>überschritten!</b></h2></span></div>
+    
 
 <%else%>
- <div><h2><span style="color:#0CF604"><b> Noch <%= dd%> Tage <%= hh %> Stunden  <%= mm %> Minuten und <%= ss %> Sekunden </b></h2></span></div>
+<div></br></div>
+<div></div>
+ <div><h2><span style="color:#0CF604"><b> Noch <%= dd%> Tage <%= hh %> Stunden  <%= mm %> Minuten</b></h2></span></div>
 <%end%>
 </div>
 </div>
@@ -176,9 +194,20 @@
 
  <div class="col-md-1">
  	 <div>Bearbeitungsdauer</div>
+
+
+
  	  <% if @project.w0_stopped? %>
- 	  <div><%= @project.w0_stopped_at-@project.w0_started_at %></div>
-      <%else%>
+ 
+<% lo=@project.w0_stopped_at-@project.w0_started_at %>
+ <% mm, ss=lo.divmod(60) %>
+ <% hh, mm=mm.divmod(60) %>
+ <% dd, hh=hh.divmod(24) %>
+
+
+
+  <div> <%=hh %>:<%= mm %>:<%= ss%> </div>
+
       <%end%>
 </div>
 

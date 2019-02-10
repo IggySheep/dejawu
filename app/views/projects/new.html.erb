@@ -7,7 +7,7 @@
 </div>
 
 	<div class="col-md-4">
-<div><%= f.input :title, label: "Kunde" %></div>
+
 
 </div>
 
@@ -63,7 +63,7 @@
 
 
 	<div class="col-md-1">
-<div><%= f.input :bearbeiter, collection: ["RG", "GG", "HG"], label:"Bearbeiter" %></div>
+<div><%= f.input :bearbeiter, collection: ["RG", "GG", "HPG"], label:"Bearbeiter" %></div>
 
 </div>
 
@@ -107,7 +107,7 @@
 	<div class="col-md-4">
 	<div><%= f.input :workTodo1, label: "Arbeitsschritt 0" %></div>
 	</div>
-    <%= @project.w0_started_at=Time.now %>
+
 
 	<div class="col-md-4">
 	<div><%= f.input :workTodo1,label:"Beschreibung Arbeitsschritt 1", :input_html => {:maxlength =>200, :style => 'width:400px'}  %></div>
