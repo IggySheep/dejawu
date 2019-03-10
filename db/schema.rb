@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_30_204226) do
+ActiveRecord::Schema.define(version: 2019_03_10_125003) do
 
   create_table "projects", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
@@ -39,6 +39,9 @@ ActiveRecord::Schema.define(version: 2018_12_30_204226) do
     t.string "ext1"
     t.string "ext2"
     t.string "ext3"
+    t.string "ansprech"
+    t.string "kunde"
+    t.string "befund"
   end
 
 end

@@ -36,6 +36,11 @@ end
 		
 	end
 
+	 
+
+	
+
+
 
 
 	def update
@@ -73,13 +78,16 @@ end
 	end
 
 
+		
+
+
 
 
 
 private
 def project_params
 
-	params.require(:project).permit(:title, :description, :noInt, :noExt, :workTodo,:workTodo1, :workTodo2, :workTodo3, :workTodo4, :work, :work1,:work2,:work3,:work4,:bearbeiter,:liefTermn,:warEing,:ext, :ext1, :ext2, :ext3)
+	params.require(:project).permit(:title, :description, :noInt, :noExt, :workTodo,:workTodo1, :workTodo2, :workTodo3, :workTodo4, :work, :work1,:work2,:work3,:work4,:bearbeiter,:liefTermn,:warEing,:ext, :ext1, :ext2, :ext3,:ansprech, :kunde, :befund)
 end
 
 def find_project
