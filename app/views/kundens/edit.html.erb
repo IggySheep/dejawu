@@ -1,0 +1,54 @@
+<div class="header">
+  <div class="container">
+
+    <h1>DadApp</h1>
+  </div>
+</div>
+
+<div class="create">
+  <div class="container">
+    <%= form_for(@kunden) do |f| %>  
+      <div class="field"> 
+        
+        <%= form_for(@kunden) do |f| %>  
+  <div class="field"> 
+    <%= f.label :firma %><br> 
+    <%= f.text_field :firma %> 
+  </div> 
+
+
+  <div class="actions"> 
+      <%= f.label :strasse %><br> 
+        <%= f.text_field :strasse %> 
+   
+  </div> 
+
+    <div class="actions"> 
+      <%= f.label :hausnummer %><br> 
+        <%= f.number_field :hausnummer %> 
+   </div> 
+
+    <div class="actions"> 
+      <%= f.label :postleitzahl %><br> 
+        <%= f.number_field :postleitzahl %> 
+   </div> 
+
+   <div class="actions"> 
+      <%= f.label :stadt %><br> 
+        <%= f.text_field :stadt %> 
+   </div> 
+
+
+
+
+   <%= f.submit "Create" %> 
+<% end %> 
+        
+      
+      </div> 
+      <div class="actions"> 
+        <!-- <%= f.submit "Create" %> -->
+      </div> 
+    <% end %>
+  </div>
+</div>

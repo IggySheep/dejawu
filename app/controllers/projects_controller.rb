@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-	before_action :find_project, only: [:show, :edit, :update, :destroy, :complete, :started, :stopped]
+	before_action :find_project, only: [:show, :edit, :update, :destroy, :complete, :started, :stopped, :zukauf]
 	
 	def index
 		@projects= Project.all.order("created_at DESC")
@@ -10,6 +10,14 @@ class ProjectsController < ApplicationController
 
 	end
 
+    def hello
+     render html: "hello, world!"
+    end
+
+     def show
+     @project = Project.find(params[:id])
+   # @kunden = Kunden.find(params[@project(:kunden_id)])
+    end
 
 
 def create
@@ -25,10 +33,6 @@ def create
 end
 end
 
-		def show
-	
-		
-	end
 
 
 	def edit
@@ -78,6 +82,8 @@ end
 	end
 
 
+
+
 		
 
 
@@ -87,7 +93,7 @@ end
 private
 def project_params
 
-	params.require(:project).permit(:title, :description, :noInt, :noExt, :workTodo,:workTodo1, :workTodo2, :workTodo3, :workTodo4, :work, :work1,:work2,:work3,:work4,:bearbeiter,:liefTermn,:warEing,:ext, :ext1, :ext2, :ext3,:ansprech, :kunde, :befund)
+	params.require(:project).permit(:title, :description, :noInt, :noExt, :workTodo,:workTodo1, :workTodo2, :workTodo3, :workTodo4, :work, :work1,:work2,:work3,:work4,:bearbeiter,:liefTermn,:warEing,:ext, :ext1, :ext2, :ext3,:ansprech, :kunde, :befund, :zukauf, :kunden_id)
 end
 
 def find_project

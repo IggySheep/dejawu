@@ -1,60 +1,50 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>MeineAufgabe</title>
 
-  </head>
 
-  <body>
-  <h1>DeJaWu - Zeitmanagement für den Werkzeugbau</h1>
-<p> 
-<button type="button" class="btn btn-default"> <%= link_to "Neue Aufgabe", new_project_path%> </button>
+ <button type="button" class="btn btn-primary" data-toggle="popover" title="Neues Projekt anlegen" data-content="Legen Sie zu Ihrem Kunden ein neues Pojekt an"><%= link_to "Neues Projekt" ,new_project_path, class:'linke'%></button>
 
-<button type="button" class="btn btn-default"> <%= link_to "Übersicht", new_project_path%> </button>
+
+
+<button type="button" class="btn btn-primary" data-toggle="popover" title="Neues Projekt anlegen" data-content="Legen Sie zu Ihrem Kunden ein neues Pojekt an"><%= link_to "Change", new_project_path, class:'linke'%></button>
+
+<button type="button" class="btn btn-primary"> <%= link_to 'Kunden', kundens_path, class:'linke' %>  </button>
 
 
 
 
-	<h2> Laufende Aufträge </h2>	
 
-
-
-
+<div class="row">
+  <div class="col-md-8"><h2> Laufende Aufträge </h2>  </div>
+</div>
 
 <% @projects.each do |project| %>
-<div class="row item">
 
-<h2>   <%= link_to project.title, project %> </h2>
-
-	<div class="col-md-4">
-   
-	 <div><%= project.description  %> </div>
- 	 <div>Interne Nummer     </div>
- 	 <div>  Externe Nummer    </div>
-
-    <div> Liefertermin  </div>
-    </div>
-
-    	<div class="col-md-3">
-      <div> <br></div>
- 	 <div>  <%= project.noInt %>       </div>
- 	 <div><%= project.noExt %>       </div>
-
-    <div> <%= project.liefTermn %> </div>
-
-
-    </div>
-
-
-
-
+<div class="row">
+  <div class="col-md-8"><h2><%= link_to project.title, project %> </h2></div>
 </div>
-  <hr/>
- 
+
+  <div class="row">
+	 <div class="col-md-4">
+   
+	    <div>Projekttitel </div>
+ 	    <div>Interne Nummer</div>
+ 	    <div>Externe Nummer</div>
+      <div>Liefertermin</div>
+    </div>
+
+     <div class="col-md-4">
+   
+      <div><%= project.description  %> </div>
+      <div><%= project.noInt %></div>
+      <div><%= project.noExt %></div>
+      <div><%= project.kunden_id %></div>
+    </div>
+
+  </div>
+
+<br>
 
 
 
  <% end %>  
 
-</body>
-</html>
+

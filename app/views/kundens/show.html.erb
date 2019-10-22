@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-md-2">Firma </div>
+  <div class="col-md-4"><%= @kunden.firma %> </div>
+</div>
+
+<div class="row">
+  <div class="col-md-2">Strasse</div>
+  <div class="col-md-4"><%= @kunden.strasse %> </div>
+</div>
+
+<div class="row">
+  <div class="col-md-2">PLZ/Stadt</div>
+  <div class="col-md-1"><%= @kunden.postleitzahl %> </div>
+   <div class="col-md-4"><%= @kunden.stadt %> </div>
+</div>
+ 
+   
+ 
+  
+     
+<%= link_to "Editieren", edit_kunden_path %>
+</div>
+
+<div class="reviews">
+  <% @projects.each do |project| %>
+    <div class="review">
+     
+      <p class="author">  <%= project.title %></p>
+          
+      <p class="comment"> <%= project.description %> </p>
+       <%= link_to 'Zum Projekt', project %>
+    </div>
+
+  <% end %>
+  <%= link_to "Zurück", root_path %>
+</div>

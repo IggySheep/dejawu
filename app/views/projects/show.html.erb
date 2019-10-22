@@ -5,19 +5,6 @@
 
 
 
-</div>
-	<div class="col-md-4">
-
-
-<div><strong><h2><%= @project.title %></h2></strong></div>
-
-</div>
-</div>
-
-
-
-
-
 	<button type="button" class="btn btn-default"> <%= link_to "Zurück", root_path %>
 	</button>
 
@@ -27,10 +14,16 @@
 	<button type="button" class="btn btn-default"> <%= link_to "Löschen", project_path(@project) , method: :delete, data: { confirm: "Bist Du sicher?"} %>
 	</button>
 
+    <button type="button" class="btn btn-default"> <%= link_to "Projekt abschliessen", edit_project_path %>
+  </button>
+
+
+</div>
+</div>
 
 
 
- 
+<%= @project.born %>
 
 
 
@@ -44,9 +37,33 @@
 
 <div class="row">
 
-	<div class="col-md-10">
+	<div class="col-md-2">Beschreibung</div>
+  <div class="col-md-2"><%= @project.description %></div>
 
+</div>
 
+<div class="row">
+
+  <div class="col-md-2">Int. Projektnummer</div>
+  <div class="col-md-2"><%= @project.noInt %></div>
+
+</div>
+
+<div class="row">
+  <div class="col-md-2">Ext. Projektnummer</div>
+  <div class="col-md-2"><%= @project.noInt %></div>
+</div>
+
+<div class="row">
+  <div class="col-md-2">Kunde</div>
+  <div class="col-md-2"> <div>
+ 
+    <%= @project.kunden_id %>  </p>
+          <%= @project.kunden_id.to_s %>
+         <% kunder =  kunden_path(:id => @project.kunden_id) %>
+          <%= link_to 'Zum Kunden', kunder %>
+    </div></div>
+</div>
 
 <table>
    <tr> 
@@ -97,7 +114,7 @@
 
 
   <% t=@project.liefTermn-Time.now %>
- <% mm, ss=t.divmod(60) %>
+ <%mm, ss=t.divmod(60) %>
  <% hh, mm=mm.divmod(60) %>
  <% dd, hh=hh.divmod(24) %>
 
@@ -135,8 +152,11 @@
 	<div class="col-md-1">
 <div>No</div> 
 <div>1</div> 
+<div><br></div>
 <div>2</div> 
+<div><br></div>
 <div>3</div> 
+<div><br></div>
 <div>4</div> 
 </div>
 
@@ -147,20 +167,26 @@
 
 <div>Bearbeitungsschritt</div> 
 <div><%= @project.work %></div> 
+<div><br></div>
 <div><%= @project.work1 %></div>
+<div><br></div>
 </div>
 
 	<div class="col-md-1">
 	<div>Bearbeiter</div>
 <div><%= @project.bearbeiter %></div> 
+<div><br></div>
 <div><%= @project.bearbeiter %></div> 
+<div><br></div>
 </div>
 
 
  <div class="col-md-3">
   <div>Beschreibung </div>	
  <div><%= @project.workTodo %> </div>
+ <div><br></div>
 <div><%= @project.workTodo1 %> </div>
+ <div><br></div>
  </div>
      
  <div class="col-md-1">
@@ -184,7 +210,7 @@
 <% end %>
 
 </div>
-
+<div><br></div>
 
  <div class="col-md-1">
  	 <div>Beginn</div>
@@ -240,7 +266,7 @@
        <h3>Zukaufteile </h3>
 
 
-    <p> <%= @project.workTodo %></p>
+    <p> <%= @project.zukauf %></p>
 
 
        <h3>externe Bearbeitung</h3>
