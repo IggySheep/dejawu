@@ -1,5 +1,5 @@
 class Project < ApplicationRecord
-	belongs_to :kunden_daten
+	belongs_to :kunden
 	
 	def completed?
        !completed_at.blank?

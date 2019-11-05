@@ -1,3 +1,154 @@
-<html>
-<b> Hahaha
-</html>
+<h1>Aufgabe bearbeiten</h1>
+
+<%= simple_form_for @project do |f| %>
+
+
+<div class="row">
+	<div class="col-md-4">
+<div><%= f.input :title, label: "Projekttitel" %> </div>
+
+</div>
+
+	<div class="col-md-4">
+
+
+</div>
+
+
+
+</div>
+
+
+
+<div class="row">
+	<div class="col-md-8">
+<div><%= f.input :description, label: "Beschreibung", :input_html => {:maxlength =>500, :style => 'width:400px'} %></div>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+</div>
+   
+
+<div class="row">
+
+
+	<div class="col-md-1">
+<div><%= f.input :bearbeiter, collection: ["RG", "GG", "HPG"], label:"Bearbeiter" %></div>
+
+</div>
+
+
+
+	<div class="col-md-3">
+<div><%= f.input :work, label: "Arbeitsschritt 0" %></div>
+
+</div>
+
+	<div class="col-md-4">
+<div><%= f.input :workTodo, label: "Arbeitsschritt 0" %></div>
+
+</div>
+
+
+	<div class="col-md-4">
+<div><%= f.input :workTodo,label:"Beschreibung Arbeitsschritt 0", :input_html => {:maxlength =>200, :style => 'width:400px'} %></div>
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+<div class="row">
+	<div class="col-md-1">
+	<div><%= f.input :bearbeiter, collection: ["RG", "GG", "HG"], label:"Bearbeiter" %></div>
+	</div>
+
+
+	
+	<div class="col-md-3">
+	<div> <%= f.input :work1, label: "Arbeitsschritt 1" %></div>
+	</div>
+
+	<div class="col-md-4">
+	<div><%= f.input :workTodo1, label: "Arbeitsschritt 0" %></div>
+	</div>
+
+
+	<div class="col-md-4">
+	<div><%= f.input :workTodo1,label:"Beschreibung Arbeitsschritt 1", :input_html => {:maxlength =>200, :style => 'width:400px'}  %></div>
+	</div>
+
+
+
+
+</div>
+   
+  
+  
+    
+<div class="row">
+
+
+	<div class="col-md-4">
+<div><%= f.input :ext, label: "externe Bearbeitung" , :input_html => {:maxlength =>200} %></div>
+
+</div>
+
+		<div class="col-md-4">
+		<div><%= f.input :zukauf, label: "Zukaufteile" , :input_html => {:maxlength =>200} %></div>
+		</div>
+</div>
+
+  
+<div class="row">
+
+		<div class="col-md-4">
+		<div><%= f.input :ansprech, label: "Ansprechpartner" , :input_html => {:maxlength =>200} %></div>
+		</div>
+
+
+		<div class="col-md-4">
+		<div><%= f.input :kunde, label: "Kunde" , :input_html => {:maxlength =>200} %></div>
+		</div>
+
+
+
+<div class="row">
+	<div class="col-md-4">
+<div><%= f.input :befund, label: "Befund", :input_html => {:maxlength =>500, :style => 'width:400px'} %></div>
+
+</div>
+
+</div>
+
+
+   
+      
+
+
+<% end %>
+  <%= f.button :submit, label: "Erstellen" %>
+
+<%= link_to project_path do%>
+	<i class="far fa-hand-point-left"></i>
+	<% end %>

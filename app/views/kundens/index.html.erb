@@ -1,0 +1,51 @@
+
+
+<h1> Kundendatenbank </h1>
+
+
+<% @kundens.each do |kunde| %>
+
+    <div class="row">
+     
+      <div class="col-md-2">Firma</div>
+      <div class="col-md-4"><%= kunde.firma %></div>
+    </div>
+
+    <div class="row">
+     
+      <div class="col-md-2">Kunden-Id</div>
+      <div class="col-md-4"><%= kunde.id %></div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-2">Strasse</div>
+      <div class="col-md-4"><%= kunde.strasse %>&nbsp;<%= kunde.hausnummer %></div>
+      <div class="col-md-2"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-2">Stadt</div>
+      <div class="col-md-4"><%= kunde.postleitzahl %>&nbsp;<%= kunde.stadt %></div>
+    </div>
+
+
+
+     <button type="button" class="btn btn-primary" data-toggle="popover" title="Neues Projekt anlegen" data-content="Legen Sie zu Ihrem Kunden ein neues Pojekt an"><%= link_to "Neues Projekt" ,new_project_path, class:'linke'%></button>
+
+      <button type="button" class="btn btn-primary" data-toggle="popover" title="Kunde Detail" data-content="Zeigen Kunde"><%= link_to "Zum Kunden" ,kunde, class:'linke'%></button>
+
+      
+      <button type="button" class="btn btn-primary" data-toggle="popover" title="Kunde Detail" data-content="Zeigen Kunde">
+       <%= link_to 'Editieren', edit_kunden_path(:id => kunde), class:'linke' %></button>
+   
+
+
+
+<p>
+<p>
+
+     
+ 
+<% end %>
+
+

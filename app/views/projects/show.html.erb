@@ -11,7 +11,7 @@
 	<button type="button" class="btn btn-default"> <%= link_to "Editieren", edit_project_path %>
 	</button>
 
-	<button type="button" class="btn btn-default"> <%= link_to "Löschen", project_path(@project) , method: :delete, data: { confirm: "Bist Du sicher?"} %>
+	<button type="button" class="btn btn-default"> <%= button_to "Löschen", project_path(@project) , method: :delete, data: { confirm: "Bist Du sicher?"} %>
 	</button>
 
     <button type="button" class="btn btn-default"> <%= link_to "Projekt abschliessen", edit_project_path %>
@@ -56,12 +56,10 @@
 
 <div class="row">
   <div class="col-md-2">Kunde</div>
-  <div class="col-md-2"> <div>
+ <%= link_to @kunde.firma, @kunde %>
+
  
-    <%= @project.kunden_id %>  </p>
-          <%= @project.kunden_id.to_s %>
-         <% kunder =  kunden_path(:id => @project.kunden_id) %>
-          <%= link_to 'Zum Kunden', kunder %>
+         
     </div></div>
 </div>
 

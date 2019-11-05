@@ -140,14 +140,22 @@
     
 <div class="row">
 
-		<div class="col-md-4">
-		<div><%= f.input :ansprech, label: "Ansprechpartner" , :input_html => {:maxlength =>200} %></div>
+	
+
+
+
+<div class="col-md-4">
+	<div> <%= f.label :kunden_id, "Auftraggeber" %>
+	 <div><%= f.select :kunden_id , Kunden.all.collect{|d| [d.firma, d.id ]} %></div>
 		</div>
 
 
-		<div class="col-md-4">
-		<div><%= f.input :kunde, label: "Kunde" , :input_html => {:maxlength =>200} %></div>
-		</div>
+	
+
+
+
+
+
 
 
 
