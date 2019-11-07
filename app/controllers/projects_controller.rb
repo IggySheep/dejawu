@@ -1,8 +1,11 @@
 class ProjectsController < ApplicationController
 	before_action :find_project, only: [:show, :edit, :update, :destroy, :complete, :started, :stopped]
 	
+
+
 	def index
 	@projects= Project.all.order("created_at DESC")
+	
 	end
 
 	def new
@@ -32,8 +35,7 @@ class ProjectsController < ApplicationController
 
 	def show
     @project = Project.find(params[:id])
-   
-   @kunde = Kunden.find(@project.kunden_id)
+    @kunde = Kunden.find(@project.kunden_id)
     #@kunden = Kunden.all.collect{|d| [d.firma, d.id ]}
      #@kunden = Kunden.find(params[:kunden_id])
     end
@@ -75,8 +77,6 @@ class ProjectsController < ApplicationController
 	end
 
 	def started
-		
-
 		@project.update_attribute(:w0_started_at, Time.now)
 		redirect_to project_path
       

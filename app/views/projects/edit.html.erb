@@ -33,10 +33,10 @@
         <%= f.number_field :noExt %> 
    </div> 
 
-   <div class="actions"> 
-      <%= f.label :kunden_id %><br> 
-        <%= f.text_field :kunden_id %> 
-   </div> 
+ <div class="col-md-4">
+  <div> <%= f.label :kunden_id, "Auftraggeber" %>
+   <div><%= f.select :kunden_id , Kunden.all.collect{|d| [d.firma, d.id ]} %></div>
+    </div> 
 
 
 

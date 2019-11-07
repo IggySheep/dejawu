@@ -1,12 +1,12 @@
 
 
- <button type="button" class="btn btn-primary" data-toggle="popover" title="Neues Projekt anlegen" data-content="Legen Sie zu Ihrem Kunden ein neues Pojekt an"><%= link_to "Neues Projekt" ,new_project_path, class:'linke'%></button>
+<!--  <button type="button" class="btn btn-primary" data-toggle="popover" title="Neues Projekt anlegen" data-content="Legen Sie zu Ihrem Kunden ein neues Pojekt an"><%= link_to "Neues Projekt" ,new_project_path, class:'linke'%></button>
 
 
 
 <button type="button" class="btn btn-primary" data-toggle="popover" title="Neues Projekt anlegen" data-content="Legen Sie zu Ihrem Kunden ein neues Pojekt an"><%= link_to "Change", new_project_path, class:'linke'%></button>
 
-<button type="button" class="btn btn-primary"> <%= link_to 'Kunden', kundens_path, class:'linke' %>  </button>
+<button type="button" class="btn btn-primary"> <%= link_to 'Kunden', kundens_path, class:'linke' %>  </button> -->
 
 
 
@@ -22,24 +22,42 @@
   <div class="col-md-8"><h2><%= link_to project.title, project %> </h2></div>
 </div>
 
-  <div class="row">
-	 <div class="col-md-4">
-   
-	    <div>Projekttitel </div>
- 	    <div>Interne Nummer</div>
- 	    <div>Externe Nummer</div>
-      <div>Liefertermin</div>
+
+    <div class="row">
+     
+      <div class="col-md-2">Firma</div>
+      <div class="col-md-4"><%= Kunden.find(project.kunden_id).firma %></div>
+  
     </div>
 
-     <div class="col-md-4">
-   
-      <div><%= project.description  %> </div>
-      <div><%= project.noInt %></div>
-      <div><%= project.noExt %></div>
-      <div><%= project.kunden_id %></div>
+    <div class="row">
+     
+      <div class="col-md-2">Liefertermin</div>
+      <div class="col-md-4"><%= project.liefTermn.strftime("%e.%b %Y ") %></div>
+  
     </div>
 
-  </div>
+     <div class="row">
+     
+      <div class="col-md-2">Interne Nummer</div>
+      <div class="col-md-4"><%= project.noInt %></div>
+  
+    </div>
+
+    <div class="row">
+     
+      <div class="col-md-2">Externe Nummer</div>
+      <div class="col-md-4"><%= project.noExt %></div>
+  
+    </div>
+
+    
+
+
+
+
+
+
 
 <br>
 

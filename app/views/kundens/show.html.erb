@@ -1,4 +1,9 @@
 <div class="row">
+  <div class="col-md-6"><h2>Kundendaten <%= @kunden.firma %></h2> </div>
+  <div class="col-md-2"></div>
+</div>
+
+<div class="row">
   <div class="col-md-2">Firma </div>
   <div class="col-md-4"><%= @kunden.firma %> </div>
 </div>
@@ -13,24 +18,75 @@
   <div class="col-md-1"><%= @kunden.postleitzahl %> </div>
    <div class="col-md-4"><%= @kunden.stadt %> </div>
 </div>
- 
-   
- 
-  
-     
-<%= link_to "Editieren", edit_kunden_path %>
+<div class="row">
+  <div class="col-md-2">Homepage</div>
+   <div class="col-md-4"><%= @kunden.stadt %> </div>
 </div>
+<br>     
+<%= link_to "Kunde Editieren", edit_kunden_path %>
+<br>
+<br>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Ansprechpartner</th>
+        <th>Abteilung</th>
+        <th>Telefonnummer</th>
+        <th>Faxnummer</th>
+        <th>E-Mail</th>
+        <th>Bearbeiten</th>
+      </tr>
+    </thead>    
+ <% @kontakts.each do |kontakt| %>
 
-<div class="reviews">
-  <% @projects.each do |project| %>
-    <div class="review">
-     
-      <p class="author">  <%= project.title %></p>
-          
-      <p class="comment"> <%= project.description %> </p>
-       <%= link_to 'Zum Projekt', project %>
-    </div>
+  
+    <tbody>
+      <tr>
+        <td><%= link_to kontakt.name, kontakt %> <%=kontakt.vorname %></td>
+        <td><%= kontakt.abteilung %></td>
+        <td><%= kontakt.telno %></td>
+        <td><%= kontakt.faxno %></td>
+        <td><a href="mailto:<%= kontakt.emai %>"><%= kontakt.emai %></a></td>
+        <td><%= link_to 'Edit', edit_kontakt_path(kontakt) %></td>
+      </tr>
+   
 
-  <% end %>
-  <%= link_to "Zurück", root_path %>
+<% end %>
+
+    </tbody>
+  </table>
+    <%= link_to "Zurück", root_path %>
+</div>
+<br>
+<br>
+<div class="container">
+  <h2>Projekte mit Firma <%= @kunden.firma %></h2>
+  <p>Hier sind laufende und abgeschlossene Projekte aufgeführt </p>            
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Titel</th>
+        <th>Beschreibung</th>
+        <th>Wareneingang</th>
+        <th>Auftragsnummer</th>
+      </tr>
+    </thead>    
+ <% @projects.each do |project| %>
+
+  
+    <tbody>
+      <tr>
+        <td><%= link_to project.title, project %></td>
+        <td><%= project.description %></td>
+        <td><%= project.warEing.strftime("%e.%b %Y  ") %></td>
+        <td><%= project.warEing.strftime("%e.%b %Y  ") %></td>
+      </tr>
+   
+
+<% end %>
+
+    </tbody>
+  </table>
+    <%= link_to "Zurück", root_path %>
 </div>

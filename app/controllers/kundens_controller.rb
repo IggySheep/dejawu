@@ -21,6 +21,7 @@ class KundensController < ApplicationController
 	def show
 	  @kunden = Kunden.find(params[:id])
 	  @projects = @kunden.projects
+	   @kontakts = @kunden.kontakts
 	end
 
 	def edit

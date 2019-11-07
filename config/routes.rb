@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
-resources :kundens
+  resources :kontakts
+  resources :kundens
 #root 'kundens#index'
- get 'kundens' => 'kundens'
+    get 'kundens' => 'kundens'
   	get 'kundens/new' => 'kundens#new'
 	post 'kundens' => 'kundens#create'
 
-  root 'projects#index'
+    root 'projects#index'
   	get 'projects/new' => 'projects#new'
 	#post 'projects' => 'projects#create'
 	#post 'projects' => 'projects#create'
@@ -15,7 +16,7 @@ resources :kundens
 
   	resources :projects do
 		member do
-			patch :complete, :started, :stopped
+		patch :complete, :started, :stopped
 			
 end
 
